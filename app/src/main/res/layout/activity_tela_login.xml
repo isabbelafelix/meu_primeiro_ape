@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="100dp"
         android:background="@drawable/design_button"
+        android:inputType="textEmailAddress"
         android:hint="Digite seu e-mail"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -36,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:background="@drawable/design_button"
+        android:inputType="textPassword"
         android:hint="Senha"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -55,7 +57,8 @@
         android:textColor="@color/bege"
         app:layout_constraintBottom_toTopOf="@+id/text_conta1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_senha" />
 
     <TextView
         android:id="@+id/text_conta1"
