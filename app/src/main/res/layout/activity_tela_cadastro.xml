@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_img_tela_login"
-        android:layout_margin="100dp"
+        android:layout_margin="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +24,7 @@
         android:background="@drawable/design_button"
         android:hint="Digite seu nome"
         android:inputType="text"
+        android:textColor="@color/rosa"
         android:textAlignment="center"
         android:textColorHint="@color/marron"
         android:textSize="18sp"
