@@ -24,7 +24,6 @@
         android:background="@drawable/design_button"
         android:hint="Digite seu nome"
         android:inputType="text"
-        android:textColor="@color/rosa"
         android:textAlignment="center"
         android:textColorHint="@color/marron"
         android:textSize="18sp"
