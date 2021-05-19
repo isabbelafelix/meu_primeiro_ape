@@ -1,4 +1,4 @@
-package com.example.projetomeuprimeiroape.Model
+package com.example.projetomeuprimeiroape.Ui
 
 import android.content.Context
 import android.content.Intent
@@ -50,7 +50,7 @@ class TelaCadastroActivity : AppCompatActivity() {
             val emailCadastro = cadastroEmail.text.toString()
             val senhaCadastro = cadastroSenha.text.toString()
 
-            if (nomeCadastro.isEmpty() || emailCadastro.isEmpty() || senhaCadastro.isEmpty()) {
+            if (nomeCadastro.isEmpty() && emailCadastro.isEmpty() && senhaCadastro.isEmpty()) {
                 Toast.makeText(this, "Campos Obrigatórios!", Toast.LENGTH_SHORT).show()
             } else {
 

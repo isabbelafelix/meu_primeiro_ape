@@ -1,4 +1,4 @@
-package com.example.projetomeuprimeiroape.Model
+package com.example.projetomeuprimeiroape.Ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

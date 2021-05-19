@@ -1,4 +1,4 @@
-package com.example.projetomeuprimeiroape.Model
+package com.example.projetomeuprimeiroape.Ui
 
 import android.content.Context
 import android.content.Intent

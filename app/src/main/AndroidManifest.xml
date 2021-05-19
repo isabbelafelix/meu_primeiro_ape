@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoMeuPrimeiroApe">
-        <activity android:name=".Model.TelaCadastroActivity"></activity>
-        <activity android:name=".Model.TelaLoginActivity" />
-        <activity android:name=".Model.PrimeiraTelaActivity">
+        <activity android:name=".Ui.TelaCadastroActivity"></activity>
+        <activity android:name=".Ui.TelaLoginActivity" />
+        <activity android:name=".Ui.PrimeiraTelaActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
