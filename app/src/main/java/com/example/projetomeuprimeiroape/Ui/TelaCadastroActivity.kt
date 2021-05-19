@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.projetomeuprimeiroape.Model.Cadastro
 import com.example.projetomeuprimeiroape.R
 
 class TelaCadastroActivity : AppCompatActivity() {
@@ -42,9 +43,8 @@ class TelaCadastroActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
         botaoCadastro.setOnClickListener {
+
 
             val nomeCadastro = cadastroNome.text.toString()
             val emailCadastro = cadastroEmail.text.toString()
