@@ -11,9 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetomeuprimeiroape.R
+import java.lang.ClassCastException
 
 class CaracteristicasListasFragment : Fragment(){
 
+    private lateinit var listener: OnListSelected
     private lateinit var titulo: Array<String>
     private lateinit var descricao: Array<String>
     private lateinit var imagemResId: IntArray
@@ -60,6 +62,12 @@ class CaracteristicasListasFragment : Fragment(){
         }
         typedArray.recycle()
 
+        if (context is OnListSelected) {
+            listener = context
+        } else {
+            throw ClassCastException("$context must implement")
+        }
+
     }
 
 
@@ -84,6 +92,7 @@ class CaracteristicasListasFragment : Fragment(){
             // COMO FAZER O ADAPTER ESCUTAR OS EVENTOS?
             // CITAR O EVENTO DE CLIQUE
             viewHolder.itemView.setOnClickListener{
+                    listener.onSelected(caracteristicas)
 
             }
         }

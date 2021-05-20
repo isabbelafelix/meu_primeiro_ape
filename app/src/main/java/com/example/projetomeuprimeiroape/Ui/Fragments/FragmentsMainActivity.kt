@@ -20,6 +20,18 @@ class FragmentsMainActivity : AppCompatActivity(), CaracteristicasListasFragment
     }
 
     override fun onSelected(caracteristicas: Caracteristicas) {
+        val args = Bundle()
+        args.putSerializable("detalhes", caracteristicas)
+
+        val fragment = CaracteristicasDetalhesFragment.newInstance()
+        fragment.arguments = args
+
+        // TROCAR A PROPRIEDADE DO FRAGMENTO
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container_root, fragment, "detalhesFragmento")
+                .addToBackStack(null)
+                .commit()
 
     }
 
