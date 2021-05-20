@@ -54,9 +54,11 @@ class CaracteristicasListasFragment : Fragment(){
 
         val typedArray = resources.obtainTypedArray(R.array.images)
         val imageCount = titulo.size
+        imagemResId = IntArray(imageCount)
         for (i in 0 until imageCount) {
             imagemResId[i] = typedArray.getResourceId(i, 0)
         }
+        typedArray.recycle()
 
     }
 
@@ -79,6 +81,11 @@ class CaracteristicasListasFragment : Fragment(){
                 imagemResId[position]
             )
             viewHolder.bind(caracteristicas)
+            // COMO FAZER O ADAPTER ESCUTAR OS EVENTOS?
+            // CITAR O EVENTO DE CLIQUE
+            viewHolder.itemView.setOnClickListener{
+
+            }
         }
 
 
@@ -96,6 +103,10 @@ class CaracteristicasListasFragment : Fragment(){
             itemView.findViewById<TextView>(R.id.list_name).text = caracteristicas.titulo
         }
 
+    }
+
+    interface OnListSelected {
+        fun onSelected(caracteristicas: Caracteristicas)
     }
 
 
