@@ -43,6 +43,22 @@ class CaracteristicasListasFragment : Fragment(){
     // BUSCAR OS DADOS DA LISTA FALSA
 
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        val resources = context.resources
+        titulo = resources.getStringArray(R.array.names)
+        descricao = resources.getStringArray(R.array.descriptions)
+
+        // PARA PEGAR AS FOTOS TEM QUE DÁ UM TYPEDARRAY
+
+        val typedArray = resources.obtainTypedArray(R.array.images)
+        val imageCount = titulo.size
+        for (i in 0 until imageCount) {
+            imagemResId[i] = typedArray.getResourceId(i, 0)
+        }
+
+    }
 
 
     // CRIAR UM ADAPTER
