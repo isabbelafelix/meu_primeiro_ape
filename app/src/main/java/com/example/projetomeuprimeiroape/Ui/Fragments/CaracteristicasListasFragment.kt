@@ -1,12 +1,14 @@
 package com.example.projetomeuprimeiroape.Ui.Fragments
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetomeuprimeiroape.R
 
@@ -20,10 +22,32 @@ class CaracteristicasListasFragment : Fragment(){
         fun newInstance() = CaracteristicasListasFragment()
     }
 
+    // INFLAR LAYOUT DA RECYCLERVIEW
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.lista_fragment, container, false)
+
+        val activity = activity as Context
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.adapter = CaracteristicasListaAdapter()
+
+        return view
+    }
+
+
+    // BUSCAR OS DADOS DA LISTA FALSA
+
+
+
 
     // CRIAR UM ADAPTER
 
-    internal inner class CaracteristicasListasFragment(context: Context) : RecyclerView.Adapter<ViewHolder>() {
+    internal inner class CaracteristicasListaAdapter : RecyclerView.Adapter<ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
             ViewHolder (
