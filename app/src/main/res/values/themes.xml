@@ -3,7 +3,7 @@
     <style name="Theme.ProjetoMeuPrimeiroApe" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/bege</item>
-        <item name="colorPrimaryVariant">@color/rosa</item>
+        <item name="colorPrimaryVariant">@color/cinza</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/verde</item>
