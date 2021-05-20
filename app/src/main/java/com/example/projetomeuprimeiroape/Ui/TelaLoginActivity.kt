@@ -26,7 +26,7 @@ class TelaLoginActivity : AppCompatActivity() {
     }
 
     fun carregarElementos(){
-        telaCadastro = findViewById<TextView>(R.id.cadastre)
+        telaCadastro = findViewById(R.id.cadastre)
         btnLogin = findViewById(R.id.button)
         textEmail = findViewById(R.id.text_email)
         textSenha = findViewById(R.id.text_senha)
@@ -57,16 +57,15 @@ class TelaLoginActivity : AppCompatActivity() {
 
                 // VERIFICAR EMAIL E SENHA
                 if (email == emailPrefs && senha == senhaPrefs){
-                    Toast.makeText(this, "Login Válido", Toast.LENGTH_SHORT).show()
-
-
                     // ABRIR A TELA DE DICAS
 
-
+                    val intent = Intent(this, TelaDicasActivity::class.java)
                     //PASSAR INFORMAÇÕES
                     intent.putExtra("intent_email", email)
                     startActivity(intent)
                     finish()
+
+
                 }else {
                     // LOGIN INVÁLIDO
                     Toast.makeText(this, "E-mail ou Senha Inválidos", Toast.LENGTH_SHORT).show()

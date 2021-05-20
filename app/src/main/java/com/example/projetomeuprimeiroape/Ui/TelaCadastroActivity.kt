@@ -30,7 +30,7 @@ class TelaCadastroActivity : AppCompatActivity() {
     }
 
     fun carregarElementos(){
-        telalogin = findViewById<TextView>(R.id.text_entrar)
+        telalogin = findViewById(R.id.text_entrar)
         cadastroNome = findViewById(R.id.text_name_cadastro)
         cadastroEmail = findViewById(R.id.text_email_cadastro)
         cadastroSenha = findViewById(R.id.text_password_cadastro)
@@ -58,19 +58,21 @@ class TelaCadastroActivity : AppCompatActivity() {
                 // EDITAR E SALVAR OS ARQUIVOS
                 // SALVANDO OS DADOS NO SHARED EM SEGUIDA ABRE A TELA DE LOGIN
 
-                val sharedPreferences = getSharedPreferences("CADASTRO $emailCadastro", Context.MODE_PRIVATE)
+                val sharedPreferences = getSharedPreferences("cadastro $emailCadastro", Context.MODE_PRIVATE)
 
                 val editarPrefs = sharedPreferences.edit()
 
-                editarPrefs.putString(nomeCadastro, "NOME")
-                editarPrefs.putString(emailCadastro, "EMAIL")
-                editarPrefs.putString(senhaCadastro, "SENHA")
+                editarPrefs.putString("nome", nomeCadastro)
+                editarPrefs.putString("email", emailCadastro)
+                editarPrefs.putString("senha", senhaCadastro)
 
                 editarPrefs.apply()
 
                 val loginIntent = Intent(this, TelaLoginActivity::class.java)
-                loginIntent.putExtra("INTENT_EMAIL", emailCadastro)
+                loginIntent.putExtra("intent_email", emailCadastro)
                 startActivity(loginIntent)
+
+                finishAffinity()
 
             }
         }
